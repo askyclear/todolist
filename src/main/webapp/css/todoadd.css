@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+#wraper{
+    margin: 0 auto;
+    width: 1080px;
+    
+}
+body *{
+    font-size: 17px;
+    color: dimgray;
+}
+
+#header h1{
+    text-align: center;
+    font-size: 2em;
+    color: black;
+}
+#container{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.title input{
+    width: 100%;
+    padding: 5px;
+}
+.name input{
+    padding: 5px;
+}
+.sequence{
+    font-size: 15px;
+    margin-right: 20px;
+}
+.sequence input{
+    width: 15px;
+    height: 15px;
+    font-size:15px;
+}
+.back{
+    width:130px;
+    background-color: white;
+    border: 1px solid black;
+    margin:0px;
+    padding: 10px;
+}
+.hidden_but{
+    width: 130px;
+    border: none;
+    background: none;
+    margin:0px;
+}
+.but{
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    color: white;
+    width: 130px;
+    padding: 10px;
+    margin:0px;
+}

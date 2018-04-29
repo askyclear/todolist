@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+body *{
+	font-family: 굴림, verdana, sans-serif;
+    font-size: 10px;
+}
+#wraper{
+    width:1290px;
+    margin: 0 auto;
+    padding: 15px;
+    padding-top: 50px;
+}
+
+#header{
+    height: 90px;
+}
+#header_rocate {
+    transform: rotate(330deg);
+    display: inline-block;
+    
+    color:cadetblue;
+}
+#header_rocate h1{
+	font-size:3.5em;
+}
+#header input {
+    display: inline-block;
+    width: 200px;
+    padding: 10px;
+    vertical-align: middle;
+    background-color: darkturquoise;
+    color: white;
+    font-size: 1em;
+    float: right;
+}
+#container{
+    padding-left: 120px;
+}
+.list_div{
+    display: inline-block;
+    width: 380px;
+    padding-left: 10px;
+    float: left;
+}
+.list_header{
+    background-color:darkblue;
+    color: white;
+    padding: 15px;
+    font-size: 2em;
+}
+.list{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: cyan;
+    padding:15px;
+}
+.list h2{
+	font-size:1.4em;
+}
+.type_change {
+	float:right;
+}
