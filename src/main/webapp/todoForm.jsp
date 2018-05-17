@@ -18,16 +18,15 @@
                     <input type="text" maxlength="24" name="title" placeholder="swift 공부하기(24자까지)"
                     value="${title}"
                     required/>
-                </label><br><br>
+                </label>
                 <label class="name">누가 할일인가요?<br>
-                <input type="text" name="name" placeholder="홍길동" value="${name}" required/></label><br><br>
-                <label>우선순위를 선택하세요.</label>
-                <br>
+                <input type="text" name="name" placeholder="홍길동" value="${name}" required/></label>
+                <label>우선순위를 선택하세요. <br>
                 <label class="sequence"><input type="radio" required name="sequence1"value="1">1순위</label>
                 <label  class="sequence"><input type="radio" required name="sequence1"value="2">2순위</label>
                 <label  class="sequence"><input type="radio" required name="sequence1"value="3">3순위</label>
-        
-                <br><br><br>
+                </label>
+
                 <input class="back" type="button" onclick="location.href='./main'" value="< 이전">
                 <input class="hidden_but" type="submit" value=""/>
                 <input class="but" type="submit" value="제출"/>

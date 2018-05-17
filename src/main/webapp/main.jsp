@@ -28,8 +28,7 @@
                    TODO
            </div>
            <c:forEach var="list" items="${todolist}">
-           		<c:if test="${list.type eq 'TODO'}">
-           		
+           		<c:if test="${list.type eq 'TODO'}">   		
            			<div class="list" id ='${list.type }${list.id}'>           			
            				<h2>${list.title}</h2>
            				<div>등록날짜:${list.regdate }, ${list.name }, 우선순위${list.sequence }

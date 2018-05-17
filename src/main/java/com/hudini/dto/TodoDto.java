@@ -37,10 +37,9 @@ public class TodoDto implements Comparable<TodoDto>{
 	}
 	@Override
 	public int compareTo(TodoDto o) {
-		// TODO Auto-generated method stub
+		// 나중에 등록한 것의 id 값이 더 클것이기 때문에 id 값 이 크면 나중에 등록한 것이 아래로 감
 		
-		return (int)(o.getId() - this.id);
+		return (id > o.getId()) ? 1 : -1;
 	}
-	
 	
 }

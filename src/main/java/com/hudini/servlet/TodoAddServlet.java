@@ -12,15 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.hudini.dao.TodoDao;
 import com.hudini.dto.TodoDto;
 
-/**
- * Servlet implementation class TodoAddServlet
- */
+
 @WebServlet("/todoadd")
 public class TodoAddServlet extends HttpServlet {
        
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 2866966074580669713L;
 
 	/**
@@ -28,7 +23,6 @@ public class TodoAddServlet extends HttpServlet {
      */
     public TodoAddServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

@@ -7,11 +7,17 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.hudini.dto.TodoDto;
 import com.hudini.util.JDBCUtil;
-
+/*
+ * todo Table에 접근하기 위한 Data Acess Object 
+ */
 public class TodoDao {
+	/**
+	 * todo table에 데이터 insert 하는 메소드
+	 * @param todo TodoDTo 타입
+	 * @return success 시 1을 return
+	 */
 	public int addTodo(TodoDto todo){
 		int count = 0;
 		JDBCUtil jdbcUtil = JDBCUtil.getInstance(); 
@@ -32,6 +38,10 @@ public class TodoDao {
 		}
 		return count;
 	}
+	/**
+	 * todo Table에서 모든 데이터를 가져오는 메소드
+	 * @return TodoDto 타입의 리스트 객체 반환 
+	 */
 	public List<TodoDto> getTodos(){
 		List<TodoDto> todos = new ArrayList<>();
 		JDBCUtil jdbcUtil = JDBCUtil.getInstance(); 
@@ -40,7 +50,7 @@ public class TodoDao {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate desc";
-//		String sql = "select id, title, name, sequence, type, regdate from todo where type = ? order by regdate desc";
+		
 		try{
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -62,32 +72,26 @@ public class TodoDao {
 		
 		return todos;
 	}
-	public int updateTodo(long id){
+	/**
+	 * 
+	 * @param id        long type의  primaryKey
+	 * @param curType   TODO 또는 DOING 의 값을 가진 String 
+	 * @return success시 int 형 1을 반환
+	 */
+	public int updateTodo(long id, String curType){
 		int count = 0;
 		JDBCUtil jdbcUtil = JDBCUtil.getInstance(); 
 		Connection conn = jdbcUtil.getConnection();
 		PreparedStatement ps = null;
-		ResultSet rs = null;
-		String sqlSelect = "select type from todo where id = ?";
 		String sqlUpdate = "update todo set type = ? where id = ?";
 		try{
-			ps = conn.prepareStatement(sqlSelect);
-			ps.setLong(1, id);
-			rs = ps.executeQuery();
-			String type = null;
-			while(rs.next()){
-				type = rs.getString("type");
-			}
-			ps.close();
 			ps = conn.prepareStatement(sqlUpdate);
-			switch(type){
-				case "TODO" : ps.setString(1, "DOING");
-					break;
-				case "DOING" : ps.setString(1, "DONE");
-					break;
-				default:
-					ps.setString(1,"DONE");
+			if(curType.equals("TODO")){
+				ps.setString(1, "DOING");
+			}else if(curType.equals("DOING")){
+				ps.setString(1, "DONE");
 			}
+			
 			ps.setLong(2, id);
 			count = ps.executeUpdate();
 		}catch(SQLException e){

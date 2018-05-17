@@ -1,18 +1,20 @@
 @CHARSET "UTF-8";
 #wraper{
     margin: 0 auto;
-    width: 1080px;
-    
+    width: 1080px;  
 }
 body *{
     font-size: 17px;
-    color: dimgray;
+    color: #696969;
 }
-
+label {
+	display: block;
+	margin-bottom: 1.2em;
+}
 #header h1{
     text-align: center;
     font-size: 2em;
-    color: black;
+    color: #000000;
 }
 #container{
     width: 50%;
@@ -27,6 +29,7 @@ body *{
     padding: 5px;
 }
 .sequence{
+	display:inline-block;
     font-size: 15px;
     margin-right: 20px;
 }
@@ -51,7 +54,7 @@ body *{
 .but{
     background-color: cornflowerblue;
     border: 1px solid cornflowerblue;
-    color: white;
+    color: #FFFFFF;
     width: 130px;
     padding: 10px;
     margin:0px;
